@@ -28,24 +28,6 @@
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBx-QA-1wl"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxi-OV-ywr" userLabel="AnimatingView">
-                                <rect key="frame" x="109" y="138" width="175" height="175"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="preset name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyN-Bg-Ed8">
-                                        <rect key="frame" x="32.999999999999993" y="75.666666666666657" width="109.33333333333331" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="Htq-71-BE5"/>
-                                    <constraint firstAttribute="height" constant="175" id="VwX-ZF-byc"/>
-                                    <constraint firstItem="JyN-Bg-Ed8" firstAttribute="centerY" secondItem="gxi-OV-ywr" secondAttribute="centerY" id="iur-Yo-VrJ"/>
-                                    <constraint firstItem="JyN-Bg-Ed8" firstAttribute="centerX" secondItem="gxi-OV-ywr" secondAttribute="centerX" id="qlS-Ck-821"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FA6-8e-EH3">
                                 <rect key="frame" x="101.66666666666669" y="513" width="190" height="164"/>
                                 <subviews>
@@ -121,27 +103,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kisspng-football-clip-art-soccer-ball-outline-5a8488551df533.0094586215186350931227" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-Ac-uPE">
+                                <rect key="frame" x="111.66666666666669" y="132" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="PNQ-Kw-rht"/>
+                                    <constraint firstAttribute="height" constant="170" id="skA-3C-6tH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="2Bg-Ac-uPE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="73" id="6dG-Cm-f0f"/>
                             <constraint firstItem="NuV-rE-NiF" firstAttribute="top" secondItem="FA6-8e-EH3" secondAttribute="bottom" constant="57.666666666666629" id="QPX-h5-6lX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NuV-rE-NiF" secondAttribute="bottom" constant="49" id="TXs-cX-8bq"/>
                             <constraint firstItem="FA6-8e-EH3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Vox-Qn-cO3"/>
-                            <constraint firstItem="gxi-OV-ywr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="79" id="iBm-uT-1XV"/>
                             <constraint firstItem="NuV-rE-NiF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lZT-eE-3at"/>
-                            <constraint firstItem="gxi-OV-ywr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ul8-39-Pfx"/>
+                            <constraint firstItem="2Bg-Ac-uPE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="pWQ-FS-Std"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="animatingView" destination="gxi-OV-ywr" id="4jF-tD-CPM"/>
                         <outlet property="button" destination="NuV-rE-NiF" id="51E-a2-Cp3"/>
                         <outlet property="curveLabel" destination="Rme-IE-Vt1" id="s34-Zb-R70"/>
                         <outlet property="delayLabel" destination="lDW-Rd-veg" id="cEX-Sm-NVI"/>
                         <outlet property="durationLabel" destination="oqe-BN-5TA" id="N8z-4d-LpH"/>
                         <outlet property="forceLabel" destination="ae8-d5-YOH" id="xtx-gi-nmC"/>
                         <outlet property="presetLabel" destination="7Ck-Kx-ecx" id="8hn-Ne-W10"/>
-                        <outlet property="presetName" destination="JyN-Bg-Ed8" id="FiD-oJ-cEu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,11 +137,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="kisspng-football-clip-art-soccer-ball-outline-5a8488551df533.0094586215186350931227" width="579" height="579"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
