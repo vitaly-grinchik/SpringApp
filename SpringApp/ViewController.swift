@@ -8,230 +8,87 @@
 import UIKit
 import SpringAnimation
 
-
 class ViewController: UIViewController {
 
     // MARK: - IB Outlets
-    @IBOutlet var animatingView: SpringView!
-    @IBOutlet var presetName: UILabel!
+    @IBOutlet var ball: SpringImageView!
     @IBOutlet var button: UIButton!
-    @IBOutlet var presetLabel: UILabel!
+    @IBOutlet var animationPresetLabel: UILabel!
     @IBOutlet var curveLabel: UILabel!
     @IBOutlet var forceLabel: UILabel!
     @IBOutlet var durationLabel: UILabel!
     @IBOutlet var delayLabel: UILabel!
     
-    var delegate: Springable?
+    private let forceRange = CGFloat(1)...CGFloat(5)
+    private let durationRange = CGFloat(0.5)...CGFloat(3)
+    private let delayRange = CGFloat(0)...CGFloat(1.5)
+    
+    private var setOfRandomValues: (
+        animationPreset: String,
+        curve: String,
+        force: CGFloat,
+        duration: CGFloat,
+        delay: CGFloat
+    ) = ("pop", "linear", 1, 0.7, 0.0)
     
     // MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        updateUI()
     }
     
     // MARK: - IB Actions
-    @IBAction func buttonTapped(_ sender: Any) {
-        animateNext()
+    @IBAction func buttonTapped() {
+        animate()
+        setOfRandomValues = getSetOfRandomValues()
+        updateButtonTitle()
+        updateLabels()
     }
     
-    private func animateNext() {
+    private func updateUI() {
+        button.setTitle("Run", for: .normal)
+        updateLabels()
+    }
+    private func updateButtonTitle() {
+        button.setTitle("Run: \(setOfRandomValues.animationPreset)", for: .normal)
+    }
         
-    }
-    
-}
-
-extension ViewController: Springable {
-    var autostart: Bool {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var autohide: Bool {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var animation: String {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var force: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var delay: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var duration: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var damping: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var velocity: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var repeatCount: Float {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var x: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var y: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var scaleX: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var scaleY: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var rotate: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var opacity: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var animateFrom: Bool {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var curve: String {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var layer: CALayer {
-        <#code#>
-    }
-    
-    var transform: CGAffineTransform {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    var alpha: CGFloat {
-        get {
-            <#code#>
-        }
-        set(newValue) {
-            <#code#>
-        }
-    }
-    
-    func animate() {
-        <#code#>
-    }
-    
-    func animateNext(completion: @escaping () -> Void) {
-        <#code#>
-    }
-    
-    func animateTo() {
-        <#code#>
-    }
-    
-    func animateToNext(completion: @escaping () -> ()) {
-        <#code#>
+    private func updateLabels() {
+        animationPresetLabel.text = setOfRandomValues.animationPreset
+        curveLabel.text = setOfRandomValues.curve
+        forceLabel.text = String(format: "%.1f", setOfRandomValues.force)
+        durationLabel.text = String(format: "%.1f", setOfRandomValues.duration)
+        delayLabel.text = String(format: "%.1f", setOfRandomValues.delay)
     }
     
     
+    
+    private func animate() {
+        ball.animation = setOfRandomValues.animationPreset
+        ball.curve = setOfRandomValues.curve
+        ball.force = setOfRandomValues.force
+        ball.duration = setOfRandomValues.duration
+        ball.delay = setOfRandomValues.delay
+        
+        ball.animate()
+    }
+    
+    private func getSetOfRandomValues() -> (animationPreset: String,
+                                       curve: String,
+                                       force: CGFloat,
+                                       duration: CGFloat,
+                                       delay: CGFloat)
+    {
+        let preset = AnimationPreset.allCases.randomElement() ?? .fadeIn
+        let presetName = String(describing: preset)
+        
+        let curve = AnimationCurve.allCases.randomElement() ?? .easeIn
+        let curveName = String(describing: curve)
+        
+        let force = CGFloat.random(in: forceRange)
+        let duration = CGFloat.random(in: durationRange)
+        let delay = CGFloat.random(in: delayRange)
+        
+        return (presetName, curveName, force, duration, delay)
+    }
 }

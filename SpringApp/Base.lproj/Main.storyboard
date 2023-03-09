@@ -25,7 +25,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBx-QA-1wl"/>
+                                    <action selector="buttonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqE-dO-pKE"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FA6-8e-EH3">
@@ -103,12 +103,16 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kisspng-football-clip-art-soccer-ball-outline-5a8488551df533.0094586215186350931227" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-Ac-uPE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kisspng-football-clip-art-soccer-ball-outline-5a8488551df533.0094586215186350931227" translatesAutoresizingMaskIntoConstraints="NO" id="2Bg-Ac-uPE" customClass="SpringImageView" customModule="SpringAnimation">
                                 <rect key="frame" x="111.66666666666669" y="132" width="170" height="170"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="PNQ-Kw-rht"/>
                                     <constraint firstAttribute="height" constant="170" id="skA-3C-6tH"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="squeezeLeft"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -123,12 +127,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="animationPresetLabel" destination="7Ck-Kx-ecx" id="8hn-Ne-W10"/>
+                        <outlet property="ball" destination="2Bg-Ac-uPE" id="2Xk-jO-m5y"/>
                         <outlet property="button" destination="NuV-rE-NiF" id="51E-a2-Cp3"/>
                         <outlet property="curveLabel" destination="Rme-IE-Vt1" id="s34-Zb-R70"/>
                         <outlet property="delayLabel" destination="lDW-Rd-veg" id="cEX-Sm-NVI"/>
                         <outlet property="durationLabel" destination="oqe-BN-5TA" id="N8z-4d-LpH"/>
                         <outlet property="forceLabel" destination="ae8-d5-YOH" id="xtx-gi-nmC"/>
-                        <outlet property="presetLabel" destination="7Ck-Kx-ecx" id="8hn-Ne-W10"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
