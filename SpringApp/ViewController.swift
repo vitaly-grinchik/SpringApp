@@ -61,8 +61,6 @@ class ViewController: UIViewController {
         delayLabel.text = String(format: "%.1f", setOfRandomValues.delay)
     }
     
-    
-    
     private func animate() {
         ball.animation = setOfRandomValues.animationPreset
         ball.curve = setOfRandomValues.curve
