@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D889B60929BB678C00606F20 /*  Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889B60829BB678C00606F20 /*  Settings.swift */; };
 		D8EBD7AC29B28F7600D47407 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EBD7AB29B28F7600D47407 /* AppDelegate.swift */; };
 		D8EBD7AE29B28F7600D47407 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EBD7AD29B28F7600D47407 /* SceneDelegate.swift */; };
 		D8EBD7B029B28F7600D47407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EBD7AF29B28F7600D47407 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D889B60829BB678C00606F20 /*  Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " Settings.swift"; sourceTree = "<group>"; };
 		D8EBD7A829B28F7600D47407 /* SpringApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8EBD7AB29B28F7600D47407 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8EBD7AD29B28F7600D47407 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D889B60A29BB679500606F20 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D889B60829BB678C00606F20 /*  Settings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D889B60B29BB67A100606F20 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D8EBD7AF29B28F7600D47407 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D889B60C29BB67BF00606F20 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D8EBD7B129B28F7600D47407 /* Main.storyboard */,
+				D8EBD7B629B28F8800D47407 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D889B60D29BB67DA00606F20 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D8EBD7AB29B28F7600D47407 /* AppDelegate.swift */,
+				D8EBD7AD29B28F7600D47407 /* SceneDelegate.swift */,
+				D8EBD7B929B28F8800D47407 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		D8EBD79F29B28F7600D47407 = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +95,11 @@
 		D8EBD7AA29B28F7600D47407 /* SpringApp */ = {
 			isa = PBXGroup;
 			children = (
-				D8EBD7AB29B28F7600D47407 /* AppDelegate.swift */,
-				D8EBD7AD29B28F7600D47407 /* SceneDelegate.swift */,
-				D8EBD7AF29B28F7600D47407 /* ViewController.swift */,
-				D8EBD7B129B28F7600D47407 /* Main.storyboard */,
+				D889B60D29BB67DA00606F20 /* App */,
+				D889B60A29BB679500606F20 /* Models */,
+				D889B60B29BB67A100606F20 /* Controllers */,
+				D889B60C29BB67BF00606F20 /* Storyboards */,
 				D8EBD7B429B28F8800D47407 /* Assets.xcassets */,
-				D8EBD7B629B28F8800D47407 /* LaunchScreen.storyboard */,
-				D8EBD7B929B28F8800D47407 /* Info.plist */,
 			);
 			path = SpringApp;
 			sourceTree = "<group>";
@@ -149,6 +184,7 @@
 				D8EBD7B029B28F7600D47407 /* ViewController.swift in Sources */,
 				D8EBD7AC29B28F7600D47407 /* AppDelegate.swift in Sources */,
 				D8EBD7AE29B28F7600D47407 /* SceneDelegate.swift in Sources */,
+				D889B60929BB678C00606F20 /*  Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +333,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 488U3567BQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpringApp/Info.plist;
+				INFOPLIST_FILE = SpringApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -328,7 +364,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 488U3567BQ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpringApp/Info.plist;
+				INFOPLIST_FILE = SpringApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
